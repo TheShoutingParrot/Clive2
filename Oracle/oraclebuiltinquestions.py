@@ -78,6 +78,15 @@ def personalquestions():
             say0('Heres the local weather forecast.')
             print('Opening local weather forecast...')
             webbrowser.open_new_tab('https://www.accuweather.com')
+
+      elif 'translate' in input0:
+            input = raw_input('translate (en-es): ')
+            blob = TextBlob(input)
+            blob = blob.translate(to="es")
+            print(blob)
+            say0('Here is the translation')
+      
+
       
 
       else:
