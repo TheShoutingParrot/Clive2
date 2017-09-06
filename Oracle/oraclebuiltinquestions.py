@@ -80,6 +80,7 @@ def personalquestions():
             webbrowser.open_new_tab('https://www.accuweather.com')
 
       elif 'translate' in input0:
+            say0("Input the text you want to translate")
             input = raw_input('translate (en-es): ')
             blob = TextBlob(input)
             blob = blob.translate(to="es")
