@@ -1,3 +1,5 @@
+#credit to https://github.com/retikulum/Python---Youtube-Music-Player/blob/master/Youtube_music_player.py this code is
+#a modified version of that code. Go check that out if you want to use this yourself (I mean the non-modified version).
 import webbrowser
 import urllib2
 def musicmain():
