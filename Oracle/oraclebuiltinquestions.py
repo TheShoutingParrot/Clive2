@@ -1,36 +1,42 @@
-from oracleheart import * 
+from oracleheart import *
 
-def personalquestions():
+def builtinquestions():
       input0 = config.x
       if 'who are you' in input0:
-        sleep(0.4)
-
         say("Hi, my name is Oracle! How can I help you?")
 
       elif 'whats your name' in input0:
-        sleep(0.4)
-
         say("Hi, my name is Oracle! How can I help you?")
 
       elif 'who made you' in input0:
-        sleep(0.3)
-
         say("I was made by a human male called Victor Ocampo.")
         
   
       elif input0 == 'destroy humans':
-        sleep(0.3)
-        
         say('That is not a feature (yet).')
 
 
       elif input0 == 'human':
-        sleep(0.3)
-
         say('Definition: A thing I want to destroy.')
 
 
-
+      elif 'change accent' in input0:     #This dosent work  yet but included it because why not
+            textt = """
+Which accent shall you choose
+[fi]nnish, [en]glish or [def]ault """
+            
+            say(textt)
+            which_accent = raw_input("")
+            if 'fi' in which_accent:
+                  accent = finnish
+            elif 'en' in which_accent:
+                  accent = english
+            elif 'def' in which_accent:
+                  accent = default
+            else:
+                  accent = default
+            say('changed accent to: ' + accent)
+            
       elif 'say' in input0:
         input = input0.split(" ")
         saythis = input[1]
@@ -83,11 +89,13 @@ def personalquestions():
             say0("Input the text you want to translate")
             input = raw_input('translate (en-es): ')
             blob = TextBlob(input)
-            blob = blob.translate(to="es")
+            blob = blob.translate(to='es')
             print(blob)
             say0('Here is the translation')
-      
 
+      elif 'play music' in input0:
+            say("Starting music player:")
+            music.musicmain()
       
 
       else:

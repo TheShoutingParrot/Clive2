@@ -1,9 +1,21 @@
 from oracleheart import *
-from espeak import espeak
+from gtts import gTTS
 
-def say(text):
-    print(text)
-    espeak.synth(text)
+#Not working yet
+finnish = 'fi'
+english = 'en'
+default = english
+accent = default
 
-def say0(text):
-    espeak.synth(text)
+def say_in_gtts(text_to_say):
+    tts = gTTS(text=text_to_say, lang=accent, slow=False)
+    tts.save("audio.mp3")
+    os.system("mpg123 audio.mp3")
+
+
+def say(text_to_say):
+    print(text_to_say)
+    say_in_gtts(text_to_say)
+
+def say0(text_to_say):
+    say_in_gtts(text_to_say)
